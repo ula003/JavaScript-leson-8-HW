@@ -1,5 +1,23 @@
-const arr = [1,2,3,4,5,6, false, 'hello world', 'yellow', {number: 112, age:108}, true]
-const numbers = arr.filter((item) => isNaN(item) === false)
-if(numbers.length > 5){
-    alert('good')
-}gi
+function emailGenerator(lastName, firstName){
+    firstName = firstName.trim().toLowerCase();
+    lastName = lastName.trim().toLowerCase();
+    const domain = '@mail.ru';
+    const email = `${firstName}.${lastName}.${domain}`
+    return email
+}
+const firstName = 'Ulugbek';
+const lastName = 'Nabiev';
+const email = emailGenerator(firstName, lastName);
+console.log(email);
+
+function generateId(){
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let letters = "";
+    for (let i = 0; i < 2; i++) {
+    letters += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    let numbers = Math.floor(Math.random()*100000)
+    const id = `${letters}${numbers}`
+    console.log(id);
+}
+generateId()
